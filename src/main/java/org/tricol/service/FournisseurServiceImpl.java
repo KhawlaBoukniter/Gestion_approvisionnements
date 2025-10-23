@@ -33,4 +33,15 @@ public class FournisseurServiceImpl implements FournisseurServiceInterface {
         return fournisseurRepository.findAll();
     }
 
+    public List<Fournisseur> findFournisseurByNom(String nom) {
+        return fournisseurRepository.findByNom(nom);
+    }
+
+    public List<Fournisseur> findFournisseurByNomEndingWith(String ending) {
+        return fournisseurRepository.findByEmailEndingWith(ending);
+    }
+
+    public Long countFournisseurs() {
+        return fournisseurRepository.count();
+    }
 }

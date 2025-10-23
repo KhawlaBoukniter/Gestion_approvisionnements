@@ -11,4 +11,7 @@ public interface FournisseurServiceInterface {
     void updateFournisseur(Fournisseur f);
     Optional<Fournisseur> findFournisseurById(Long id);
     List<Fournisseur> findAllFournisseur();
+    List<Fournisseur> findFournisseurByNom(String nom);
+    List<Fournisseur> findFournisseurByNomEndingWith(String ending);
+    Long countFournisseurs();
 }
