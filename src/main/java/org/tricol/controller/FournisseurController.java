@@ -70,5 +70,22 @@ public class FournisseurController {
         }
     }
 
+    @GetMapping("/byName")
+    public ResponseEntity<List<Fournisseur>> findFournisseurByNom(@RequestParam("nom") String nom) {
+        List<Fournisseur> fournisseurs = fournisseurServiceInterface.findFournisseurByNom(nom);
+        return ResponseEntity.ok(fournisseurs);
+    }
+
+    @GetMapping("/byEmailEndingWith")
+    public ResponseEntity<List<Fournisseur>> findByEmailEndingWith(@RequestParam("ending") String ending) {
+        List<Fournisseur> fournisseurs = fournisseurServiceInterface.findFournisseurByNomEndingWith(ending);
+        return ResponseEntity.ok(fournisseurs);
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Long> countFournisseurs() {
+        Long count = fournisseurServiceInterface.countFournisseurs();
+        return ResponseEntity.ok(count);
+    }
 
 }
